@@ -1,0 +1,33 @@
+import tkinter as tk
+from tkinter import messagebox
+from PIL import Image, ImageTk
+import time
+
+#slicing = create a substring by extracting elements from another string
+#indexing[] or slice ()
+#[start:stop:stop]
+
+#indexing
+
+name = "Jester Patriarca"
+
+first_name = name[0:6]
+last_name = name[7:16]
+#0,1,2,3,4,5,
+#Jester
+
+#in the line 15 bracket 2 
+#it dosent include the 0
+
+print(first_name)
+print(last_name)
+
+#slicing
+
+website1 = "http://google.com"
+website2 = "http://genshinimpact.com"
+
+slice = slice(7,-4) #the 7 it cuts the http://
+
+print(website1[slice])
+print(website2[slice])
