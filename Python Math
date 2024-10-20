@@ -1,0 +1,22 @@
+import math
+
+result = math.sqrt(8) #square root
+result1 = math.exp(12) #var
+result2 = math.pi # value of Pi
+result3 = math.pow(8,12) #returns var 1 to var 2
+result4 = math.fsum([1.3,1.4,1.5]) #floating point
+result5 = math.prod([5,10,15,20]) #iterable
+result6 = math.comb(8,2) #comb
+result7 = math.perm(8, 2) #permutations
+result8 = math.factorial(5) #factorial
+
+
+print(result)
+print(result1)
+print(result2)
+print(result3)
+print(result4)
+print(result5)
+print(result6)
+print(result7)
+print(result8)
