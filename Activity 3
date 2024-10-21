@@ -1,0 +1,28 @@
+import math
+
+def investment_calculation():
+
+    investor_name = input("Enter name of investor: ")
+    capital = float(input("Enter Capital Amount: "))
+
+    # Calculate monthly interest and processing fee
+    monthly_interest = capital * 7  # 700% of capital
+    processing_fee = monthly_interest * 0.015  # 1.5% processing fee
+    monthly_payout = monthly_interest - processing_fee
+
+    # Calculate net income and annual interest
+    net_income_monthly = monthly_payout
+    annual_interest = capital * 7 * 12  # No processing fee for annual
+    net_income_yearly = annual_interest - (processing_fee * 12)
+
+    print("\n--- Investment Details ---")
+    print(f"Investor Name          : {investor_name}")
+    print(f"Capital                : {capital:.2f}")
+    print(f"Monthly Interest       : {monthly_interest:.2f}")
+    print(f"Processing Fee         : {processing_fee:.2f}")
+    print(f"Monthly Payout         : {monthly_payout:.2f}")
+    print(f"Net Income in a Month  : {net_income_monthly:.2f}")
+    print(f"Annual Interest        : {annual_interest:.2f}")
+    print(f"Net Income in a Year   : {net_income_yearly:.2f}")
+
+investment_calculation()
