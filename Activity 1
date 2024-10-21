@@ -9,7 +9,7 @@ height_trapezoid = float(input("Enter the height of the trapezoid (h): "))
 
 area_triangle = 0.5 * base_triangle * height_triangle
 
-area_trapezoid = 0.5 * (base_trapezoid1 + base_trapezoid2) * height_trapezoid
+area_trapezoid = 0.5 * (base_trapezoid1 + base_trapezoid2) * height_trapezoid / 2
 
 print(f"Area of the triangle: {area_triangle}")
 print(f"Area of the trapezoid: {area_trapezoid}")
