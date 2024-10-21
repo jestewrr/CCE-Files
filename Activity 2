@@ -1,0 +1,24 @@
+import math
+
+def loan_calculation():
+
+    lender_name = input("Enter name of lender: ")
+    principal_amount = float(input("Enter Principal Amount: "))
+    interest_per_annum = float(input("Enter Interest per Annum "))
+
+    processing_fee = principal_amount * 0.05
+
+    loanable_amount = principal_amount - processing_fee
+
+    monthly_interest = loanable_amount * (interest_per_annum / 12)
+    monthly_amortization = loanable_amount / 10
+
+    print("\n--- Loan Details ---")
+    print(f"Name of Lender        : {lender_name}")
+    print(f"Principal Amount      : {principal_amount:.2f}")
+    print(f"5% Processing Fee     : {processing_fee:.2f}")
+    print(f"Loanable Amount       : {loanable_amount:.2f}")
+    print(f"Monthly Amortization  : {monthly_amortization:.2f}")
+
+
+loan_calculation()
