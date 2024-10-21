@@ -1,15 +1,14 @@
+import math
 
-base_triangle = float(input("Enter the base of the triangle: "))
-height_triangle = float(input("Enter the height of the triangle: "))
+base_triangle = float(input("Enter the base of the triangle (B): "))
+height_triangle = float(input("Enter the height of the triangle (Hb): "))
 
 base_trapezoid1 = float(input("Enter the first base of the trapezoid (Base A): "))
 base_trapezoid2 = float(input("Enter the second base of the trapezoid (Base B): "))
-height_trapezoid = float(input("Enter the height of the trapezoid: "))
+height_trapezoid = float(input("Enter the height of the trapezoid (h): "))
 
-# Calculate the area of the triangle
 area_triangle = 0.5 * base_triangle * height_triangle
 
-# Calculate the area of the trapezoid
 area_trapezoid = 0.5 * (base_trapezoid1 + base_trapezoid2) * height_trapezoid
 
 print(f"Area of the triangle: {area_triangle}")
