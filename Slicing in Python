@@ -1,0 +1,36 @@
+# Problem 1: Reverse the input string
+
+def reverse_string():
+    user_input = input("Enter a string: ")
+    reversed_string = user_input[::-1]  # Reverse the string using slicing
+    print(f"Reversed string: {reversed_string}")
+
+# Run the reverse string program
+reverse_string()
+# Problem 2: Convert the string input into a list
+
+def string_to_list():
+    user_input = input("Enter a string: ")
+    string_list = list(user_input)  # Convert the string to a list
+    print(f"Output in list: {string_list}")
+
+# Run the string to list program
+string_to_list()
+
+
+# Problem 3: Reverse two parts of a string
+
+def reverse_two_parts():
+    user_input = input("Enter a string: ")
+    # Splitting the input into two parts (based on the example)
+    words = user_input.split()
+
+    if len(words) == 2:
+        reversed_output = words[1] + " " + words[0]  # Reverse the order of the words
+        print(f"Output: {reversed_output}")
+    else:
+        print("Please enter exactly two words.")
+
+
+# Run the reverse two parts program
+reverse_two_parts()
