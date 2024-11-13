@@ -1,0 +1,78 @@
+import random
+
+attempts = 3
+
+welcome = "Welcome to The Knowledge Quest Challenge"
+question1 = "1. Who developed Python Programming Language?"
+question2 = "2. Is Python case sensitive when dealing with identifiers?"
+question3 = "3. All keywords in Python are in _?"
+
+options = ["A) Wick van Rossum ", "B) Rasmus Lerdorf ", "C) Guido van Rossum ", "D) Niene Stom"]
+options2 = ["A) no ", "B) yes ", "C) machine dependent ", "D) none of the mentioned"]
+options3 = ["A) Capitalized ", "B) Lower case ", "C) Upper Case ", "D) none of the mentioned"]
+correct_answer = "C"
+correct_answer2 = "B"
+correct_answer3 = "D"
+
+#question 1
+
+print(welcome)
+print(question1)
+for option in options:
+    print(option)
+
+while attempts > 0:
+    answer = input("Please select your answer (A, B, C, or D): ").upper()
+
+    if answer in ["A", "B", "C", "D"]:
+        if answer == correct_answer:
+            print("Correct!")
+            break
+        else:
+            attempts -= 1
+            print(f"Incorrect. You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print("Out of attempts,  The correct answer is C.")
+
+#question 2
+
+print(question2)
+for option2 in options2:
+    print(option2)
+
+while attempts > 0:
+    answer = input("Please select your answer (A, B, C, or D): ").upper()
+
+    if answer in ["A", "B", "C", "D"]:
+        if answer == correct_answer2:
+            print("Correct!")
+            break
+        else:
+            attempts -= 1
+            print(f"Incorrect. You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print("Out of attempts,  The correct answer is B.")
+
+#question 3
+
+print(question3)
+for option3 in options3:
+    print(option3)
+
+while attempts > 0:
+    answer = input("Please select your answer (A, B, C, or D): ").upper()
+
+    if answer in ["A", "B", "C", "D"]:
+        if answer == correct_answer3:
+            print("Correct!")
+            break
+        else:
+            attempts -= 1
+            print(f"Incorrect. You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print("Out of attempts,  The correct answer is D.")
+
+#question 4
