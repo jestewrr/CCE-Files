@@ -1,6 +1,7 @@
 import random
 
 attempts = 3
+score = 0
 
 welcome = "Welcome to The Knowledge Quest Challenge"
 question1 = "1. Who developed Python Programming Language?"
@@ -26,6 +27,7 @@ while attempts > 0:
 
     if answer in ["A", "B", "C", "D"]:
         if answer == correct_answer:
+            score += 1
             print("Correct!")
             break
         else:
@@ -46,6 +48,7 @@ while attempts > 0:
 
     if answer in ["A", "B", "C", "D"]:
         if answer == correct_answer2:
+            score += 1
             print("Correct!")
             break
         else:
@@ -66,6 +69,7 @@ while attempts > 0:
 
     if answer in ["A", "B", "C", "D"]:
         if answer == correct_answer3:
+            score += 1
             print("Correct!")
             break
         else:
@@ -74,5 +78,6 @@ while attempts > 0:
 
     if attempts == 0:
         print("Out of attempts,  The correct answer is D.")
+        print(f"Your final score is = {score} ")
 
 #question 4
