@@ -1,0 +1,129 @@
+import random
+
+attempts = 3
+score = 0
+
+welcome = "Welcome to The Knowledge Quest Challenge : Science Edition"
+question1 = "1. What is the hot middle layer of the Earth"
+question2 = "2. How many bones are there in an adult human body"
+question3 = "3. What is not found in the Shark"
+question4 = "4. How many elements are there in the periodic table "
+question5 = "5. The most abundant element in the universe is thought to be"
+options = ["A) Inner Core, B) Outer Core, C) Mantle"]
+options2 = ["A) 206, B) 304, C) 104"]
+options3 = ["A) Fins, B) Bones, C) Teeth"]
+options4 = ["A) 101, B) 100, C) 118"]
+options5 = ["A) Carbon, B) Oxygen, C) Hydrogen"]
+correct_answer = "C"
+correct_answer2 = "A"
+correct_answer3 = "B"
+correct_answer4 = "C"
+correct_answer5 = "C"
+
+#question 1
+
+print(welcome)
+print(question1)
+for option in options:
+    print(option)
+
+while attempts > 0:
+    answer = input("Please select your answer: ").upper()
+
+    if answer in ["A", "B", "C"]:
+        if answer == correct_answer:
+            score += 1
+            print("Correct!")
+            break
+        else:
+            attempts -= 1
+            print(f"Incorrect. You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print("Out of attempts,  The correct answer is C.")
+
+#question 2
+
+print(question2)
+for option2 in options2:
+    print(option2)
+
+while attempts > 0:
+    answer = input("Please select your answer: ").upper()
+
+    if answer in ["A", "B", "C"]:
+        if answer == correct_answer2:
+            score += 1
+            print("Correct!")
+            break
+        else:
+            attempts -= 1
+            print(f"Incorrect. You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print("Out of attempts,  The correct answer is A.")
+
+#question 3
+
+print(question3)
+for option3 in options3:
+    print(option3)
+
+while attempts > 0:
+    answer = input("Please select your answer: ").upper()
+
+    if answer in ["A", "B", "C"]:
+        if answer == correct_answer3:
+            score += 1
+            print("Correct!")
+            break
+        else:
+            attempts -= 1
+            print(f"Incorrect. You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print("Out of attempts,  The correct answer is B.")
+
+
+#question 4
+
+print(question4)
+for option4 in options4:
+    print(option4)
+
+while attempts > 0:
+    answer = input("Please select your answer: ").upper()
+
+    if answer in ["A", "B", "C"]:
+        if answer == correct_answer4:
+            score += 1
+            print("Correct!")
+            break
+        else:
+            attempts -= 1
+            print(f"Incorrect. You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print("Out of attempts,  The correct answer is C.")
+
+
+#question 5
+print(question5)
+for option5 in options5:
+    print(option5)
+
+while attempts > 0:
+    answer = input("Please select your answer: ").upper()
+
+    if answer in ["A", "B", "C"]:
+        if answer == correct_answer5:
+            score += 1
+            print("Correct!")
+            break
+        else:
+            attempts -= 1
+            print(f"Incorrect. You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print("Out of attempts,  The correct answer is C.")
+        print(f"Your final score is = {score} ")
