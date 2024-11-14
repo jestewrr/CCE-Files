@@ -1,32 +1,38 @@
-def add(a, b):
-    return a + b
+print("Welcome to Calculator")
+def add(num1, num2):
+    return num1 + num2
+def subtract(num1, num2):
+    return num1 - num2
+def multiply(num1, num2):
+    return num1 * num2
+def divide(num1, num2):
+    return num1 / num2
 
+print("Please select operation -\n" \
+        "1. Add\n" \
+        "2. Subtract\n" \
+        "3. Multiply\n" \
+        "4. Divide\n")
 
-def subtract(a, b):
-    return a - b
+select = int(input("Select operations from:  1, 2, 3, 4 :"))
 
+number_1 = int(input("Enter first number: "))
+number_2 = int(input("Enter second number: "))
 
-def multiply(a, b):
-    return a * b
+if select == 1:
+    print(number_1, "+", number_2, "=",
+                    add(number_1, number_2))
 
+elif select == 2:
+    print(number_1, "-", number_2, "=",
+                    subtract(number_1, number_2))
 
-def divide(a, b):
-    return a / b
+elif select == 3:
+    print(number_1, "*", number_2, "=",
+                    multiply(number_1, number_2))
 
-
-choice = int(input("Choose: 1. Add, 2. Subtract, 3. Multiply, 4. Divide: "))
-
-a = float(input("Enter first number: "))
-b = float(input("Enter second number: "))
-print("------------------------")
-
-if choice == 1:
-    print(add(a, b))
-elif choice == 2:
-    print(subtract(a, b))
-elif choice == 3:
-    print(multiply(a, b))
+elif select == 4:
+    print(number_1, "/", number_2, "=",
+                    divide(number_1, number_2))
 else:
-    if b == 0:
-        print("Cannot divide by zero.")
-    print(divide(a, b))
+    print("Invalid input")
