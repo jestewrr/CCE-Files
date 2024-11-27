@@ -1,0 +1,118 @@
+def add_user(filename):
+    name = input("Enter the user's name: ")
+    email = input("Enter the user's email: ")
+
+    with open(filename, "a") as file:
+        file.write(f"{name},{email}\n")
+
+    print(f"User {name}, with email {email}, has been added successfully\n")
+
+def view_user(filename):
+    try:
+        with open(filename, "r") as file:
+            users = file.readlines()
+
+            if users:
+                print("\nAll Users:")
+                for user in users:
+                    name, email = user.strip().split(",")
+                    print(f"Name: {name}, Email: {email}")
+                print()
+            else:
+                print("No users found.\n")
+
+    except FileNotFoundError:
+        print("No user file found. Please add a user first.\n")
+
+def search_user(filename):
+    search_name = input("Enter the name of the user to search for: ")
+    try:
+        with open(filename, "r") as file:
+            found = False
+            for user in file:
+                name, email = user.strip().split(",")
+                if name.lower() == search_name.lower():
+                    print(f"\nUser found: Name: {name}, Email: {email}")
+                    found = True
+                    break
+            if not found:
+                print(f"\nUser {search_name} not found.")
+    except FileNotFoundError:
+        print("No user found. Please add a user first.\n")
+
+def update_user(filename):
+    search_name = input("Enter the name of the user to update: ")
+    try:
+        with open(filename, "r+") as file:
+            lines = file.readlines()
+            file.seek(0)
+            found = False
+            for line in lines:
+                name, email = line.strip().split(",")
+                if name.lower() == search_name.lower():
+                    new_name = input("Enter the new name: ")
+                    new_email = input("Enter the new email: ")
+                    file.write(f"{new_name},{new_email}\n")
+                    found = True
+                else:
+                    file.write(line)
+            file.truncate()
+            if found:
+                print(f"User {search_name} updated successfully.")
+            else:
+                print(f"User {search_name} not found.")
+    except FileNotFoundError:
+        print("No user found. Please add a user first.\n")
+
+def delete_user(filename):
+    search_name = input("Enter the name of the user to delete: ")
+    try:
+        with open(filename, "r+") as file:
+            lines = file.readlines()
+            file.seek(0)
+            found = False
+            for line in lines:
+                name, email = line.strip().split(",")
+                if name.lower() != search_name.lower():
+                    file.write(line)
+                else:
+                    found = True
+            file.truncate()
+            if found:
+                print(f"User {search_name} deleted successfully.")
+            else:
+                print(f"User {search_name} not found.")
+    except FileNotFoundError:
+        print("No user found. Please add a user first.\n")
+
+def main():
+    filename = "users.txt"
+    while True:
+        print("User Management System")
+        print("1. Add a New User")
+        print("2. View All Users")
+        print("3. Search for a User")
+        print("4. Update a User")
+        print("5. Delete a User")
+        print("6. Exit")
+        
+        choice = input("Enter your choice (1-6): ")
+        
+        if choice == "1":
+            add_user(filename)
+        elif choice == "2":
+            view_user(filename)
+        elif choice == "3":
+            search_user(filename)
+        elif choice == "4":
+            update_user(filename)
+        elif choice == "5":
+            delete_user(filename)
+        elif choice == "6":
+            print("Exiting the User Management System")
+            break
+        else:
+            print("Invalid choice, please try again.")
+
+if __name__ == "__main__":
+    main()
