@@ -1,0 +1,55 @@
+def flames_game(name1, name2):
+    # Normalize the names by removing spaces and converting to lowercase
+    name1 = name1.replace(" ", "").lower()
+    name2 = name2.replace(" ", "").lower()
+
+    # Create a list of characters for both names
+    name1_chars = list(name1)
+    name2_chars = list(name2)
+
+    # Remove common characters
+    for char in name1:
+        if char in name2_chars:
+            name1_chars.remove(char)
+            name2_chars.remove(char)
+
+    # Count remaining characters
+    total_remaining = len(name1_chars) + len(name2_chars)
+
+    # The FLAMES sequence
+    flames = ['F', 'L', 'A', 'M', 'E', 'S']
+
+    # Determine the index to eliminate
+    index = 0
+    while len(flames) > 1:
+        index = (index + total_remaining - 1) % len(flames)
+        flames.pop(index)
+
+    # Return the result
+    result = flames[0]
+    return result
+
+def flames_result(result):
+    if result == 'F':
+        return "Friends"
+    elif result == 'L':
+        return "Lovers"
+    elif result == 'A':
+        return "Affectionate"
+    elif result == 'M':
+        return "Marriage"
+    elif result == 'E':
+        return "Enemy"
+    elif result == 'S':
+        return "Siblings"
+
+# Main program
+if __name__ == "__main__":
+    print("Welcome to the FLAMES game!")
+    name1 = input("Enter the first name: ")
+    name2 = input("Enter the second name: ")
+
+    result = flames_game(name1, name2)
+    relationship = flames_result(result)
+
+    print(f"The relationship between {name1} and {name2} is: {relationship}")
