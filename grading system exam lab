@@ -1,0 +1,41 @@
+def grade_calculator(average_grade):
+    if average_grade == -1:
+        return
+
+    point_grade = ((100 - average_grade) + 10) / 10
+    remarks = " "
+    letter_grade = " "
+
+    if average_grade < 0:
+        remarks = "No such grade"
+    elif average_grade < 50:
+        remarks = "Dropped"
+    elif average_grade < 75:
+        remarks = "Failed"
+    elif average_grade < 80:
+        remarks = "Passed - Satisfactory"
+        letter_grade = "C"
+    elif average_grade < 85:
+        remarks = "Passed - Good"
+        letter_grade = "B"
+    elif average_grade < 90:
+        remarks = "Passed - Average"
+        letter_grade = "B+"
+    elif average_grade < 100:
+        remarks = "Passed - Very Good"
+        letter_grade = "A"
+    elif average_grade == 100:
+        remarks = "Passed - Excellent"
+        letter_grade = "A+"
+    else:
+        remarks = "Out of range or Invalid"
+
+    print(
+        f"Average Grade: {average_grade}, Point Grade: {point_grade:.2f}, Letter Grade: {letter_grade}, Remarks: {remarks}")
+
+
+while True:
+    average_grade = int(input("Enter average grade: "))
+    grade_calculator(average_grade)
+    if average_grade == -1:
+        break
