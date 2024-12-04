@@ -1,0 +1,62 @@
+class FlamesGame:
+    def __init__(self, name1, name2):
+        self.name1 = name1
+        self.name2 = name2
+        self.relationships = {
+            "F": "Friendship",
+            "L": "Love",
+            "A": "Affection",
+            "M": "Marriage",
+            "E": "Enemy",
+            "S": "Sibling"
+        }
+
+    def remove_common_chars(self):
+        self.name1_clean = self.name1.replace(" ", "").lower()
+        self.name2_clean = self.name2.replace(" ", "").lower()
+
+        name1_list = list(self.name1_clean)
+        name2_list = list(self.name2_clean)
+
+        for char in self.name1_clean[:]:
+            if char in name2_list:
+                name1_list.remove(char)
+                name2_list.remove(char)
+
+        self.remaining_name1 = name1_list
+        self.remaining_name2 = name2_list
+        self.count1 = len(name1_list)
+        self.count2 = len(name2_list)
+        self.total_count = self.count1 + self.count2
+
+    def calculate_flames(self):
+        flames = ["F", "L", "A", "M", "E", "S"]
+
+        if self.total_count == 0:
+            return "Not compatible! Single forever </3"
+
+        index = self.total_count % len(flames)
+        if index == 0:
+            index = len(flames)
+        return self.relationships[flames[index - 1]]
+
+    def display_result(self):
+        print(f"Your name: {self.name1}")
+        print(f"Crush name: {self.name2}")
+        print(f"Your name remaining: {''.join(self.remaining_name1)}")
+        print(f"Crush name remaining: {''.join(self.remaining_name2)}")
+        print(f"Count remaining [your name]: {self.count1}")
+        print(f"Count remaining [crush]: {self.count2}")
+        print(f"Sum: {self.total_count}")
+        print(f"Relationship: {self.calculate_flames()}")
+
+    def run(self):
+        self.remove_common_chars()
+        self.display_result()
+
+
+name1 = input("Enter your name: ")
+name2 = input("Enter your partner's name: ")
+
+game = FlamesGame(name1, name2)
+game.run()
