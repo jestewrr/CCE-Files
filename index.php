@@ -22,9 +22,9 @@ if (isset($_GET['delete'])) {
 </head>
 <body class="container mt-4">
 
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col col-5">
+<div class="container vh-100">
+    <div class="row vh-100 align-items-center row justify-content-center">
+        <div class="col col-6">
 
     <div class="card">
     <div class="card-body">
